@@ -1,0 +1,33 @@
+.header1, .header2, .header3 {
+    font-family: Arial, sans-serif;
+}
+
+.header1 {
+    font-size: 1.8em;
+}
+
+.header2 {
+    font-size: 1.5em;
+}
+
+.header3 {
+    font-size: 1.4em;
+}
+
+.rood {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.2em;
+    color: red;
+}
+
+.groen {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.2em;
+    color: green;
+}
+
+.blauw {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.2em;
+    color: blue;
+}
