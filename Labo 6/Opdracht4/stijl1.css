@@ -1,0 +1,18 @@
+body {
+    font: 1.1em Verdana;
+    background-color: Silver;
+    color: DarkBlue;
+}
+
+h1 {
+    font-variant: small-caps;
+    background-color: red;
+}
+
+a:hover {
+    border: 1px solid #ff6600;
+}
+
+.rand {
+    border: 1px dotted #333;
+}
