@@ -1,0 +1,60 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #cbc5c5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-image: url('Labo 7/images/header.jpg');
+    background-size: cover;
+    color: white;
+    padding: 50px 0;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+h2 {
+    color: #333;
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+p {
+    color: #555;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+li {
+    margin: 10px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    padding: 12px;
+    text-align: center;
+}
+
+caption {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
