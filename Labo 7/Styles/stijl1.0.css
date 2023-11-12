@@ -1,0 +1,69 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #cbc5c5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-image: url('Labo 7/images/header.jpg');
+    background-size: cover;
+    color: white;
+    padding: 50px 0;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+h2 {
+    color: #333;
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+p {
+    color: #555;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+li {
+    margin: 10px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+caption {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+table { border-collapse: collapse; text-align: left; width: 100%; }
+{font: normal 12px/150% Arial, Helvetica, sans-serif;
+    background: #fff;
+    overflow: hidden;
+    border: 3px solid #990C0C;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px; }
+table td, table th { padding: 3px 20px; }
+table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36752D), color-stop(1, #275420) );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#36752D', endColorstr='#275420');background-color:#36752D; color:#FFFFFF; font-size: 15px; font-weight: bold; border-left: 1px solid #36752D; }
+table thead th:first-child { border: none; }
+table tbody td { color: #275420; border-left: 1px solid #C6FFC2;font-size: 12px;font-weight: normal; }
+table tbody .alt td { background: #DFFFDE; color: #275420; }
+table tbody td:first-child { border-left: none; }
+table tbody tr:last-child td { border-bottom: none; }
