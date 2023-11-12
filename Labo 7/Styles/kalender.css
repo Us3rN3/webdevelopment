@@ -2,6 +2,7 @@ table {
     width: 20%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    border: 4px solid black;
 }
 
 th, td {
@@ -12,4 +13,28 @@ th, td {
 th {
     background-color: #333;
     color: white;
+    text-align: center;
+}
+td.grijsMaand{
+    background-color: darkgray;
+    color: lightgray;
+}
+#hoofdding{
+    background-color: rgb(170,170,200);
+    color: black;
+
+}
+#vrijeDag{
+    background-color: rgb(250,120,120);
+}
+.hoofding{
+    background-color:  rgb(35,37,70);
+    color: rgb(200, 190, 240);
+}
+td:first-child:not(.grijsMaand) {
+    background-color: rgb(255, 220, 220);
+}
+
+td:last-child:not(.grijsMaand) {
+    background-color: rgb(255, 220, 220);
 }
