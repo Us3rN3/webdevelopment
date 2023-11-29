@@ -15,12 +15,12 @@ article {
     overflow: auto;
 }
 
-.left {
+.links {
     float: left;
     margin: 10px;
 }
 
-.right {
+.rechts {
     float: right;
     margin: 10px;
 }
