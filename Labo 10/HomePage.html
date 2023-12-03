@@ -3,80 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Homepage</title>
-    <link rel="stylesheet" href="CSS/stijl2.css">
+    <title>Homepage</title>
     <link rel="stylesheet" href="style/bootstrap-grid.css">
+    <link rel="stylesheet" href="CSS/stijl2.css">
 </head>
 <body>
-<header>
-    <h1>Quinten Verbeke</h1>
+
+<header class="jumbotron text-center">
+    <h1 class="display-4">Quinten Verbeke</h1>
+    <p class="lead">Welkom op mijn nieuwe homepage!</p>
 </header>
 
-<section>
-    <h2>Personal Information</h2>
-    <p>Full Name: Quinten Verbeke</p>
-    <p>Address: Pijkstraat 77, 8790 Waregem</p>
-    <p>Phone Number: 056602196</p>
-    <p>Email Address: <a href="mailto:quinten.verbeke@student.vives.be">quinten.verbeke@student.vives.be</a></p>
-    <img src="images/IMG_20221201_153754.jpg" alt="Quinten's Picture" alt="foto quinten" height="200" width="150"/>
+<section class="container">
+    <h2>About me:</h2>
+    <p>Er valt niet veel interessants te vertellen</p>
 </section>
 
-<section>
-    <h2>Hobbies</h2>
-    <ul>
-        <li><a href="https://www.wielerflits.be/">Wielrennen</a>: Ik doe aan competitie in het wielrennen.
-            <img src="images/b83bcf3e52db910deba7245b83176ca7.jpg" alt="foto wielrennen" height="300" width="200"/></li>
-        <li><a href="https://www.manillen.com/">Manillen</a>: In het weekend ga ik vaak met mijn oma op stap om te gaan manillen.
-            <img src="images/istockphoto-154057331-612x612.jpg" alt="foto manillen" height="200" width="300"/></li>
-        <li><a href="https://dagelijksekost.vrt.be/">Koken</a>: Koken is een grote passie van mij en chef ainsley is een groot voorbeeld.
-            <img src="images/aee4b01213a3c5f9aa1acc1ec005992a.jpg" alt="foto koken" height="300" width="200"/></li>
-    </ul>
-</section>
-
-<section>
-    <h2>Likes</h2>
-    <ul>
-        <li>
-            <a href="https://www.thunderdome.com/en/">Favorite Music: hardcore house</a><br>
-            <img src="images/L-16705-1572189939-8339.jpg" alt="Favorite Music" height="200" width="200"/>
+<section class="container">
+    <h2>My Hobbies</h2>
+    <ul class="hobby-list">
+        <li class="hobby-item">
+            <span class="hobby-title">Wielrennen</span>
+            <img src="images/b83bcf3e52db910deba7245b83176ca7.jpg" alt="Hobby 1 Image" class="hobby-image">
         </li>
-        <li>
-            <a href="https://typeonegative.net/">Favorite Band: Type O Negative</a><br>
-            <img src="images/type_o_negative_logo.webp" alt="Favorite Band" height="200" width="300"/>
-        </li>
-        <li>
-            <a href="https://www.imdb.com/title/tt0099685/">Favorite Movie: Goodfellas</a><br>
-            <img src="images/maxresdefault.jpg" alt="Favorite Movie" height="200" width="300"/>
+        <li class="hobby-item">
+            <span class="hobby-title">Koken</span>
+            <img src="images/aee4b01213a3c5f9aa1acc1ec005992a.jpg" alt="Hobby 2 Image" class="hobby-image">
         </li>
     </ul>
 </section>
 
-<section>
-    <h2>"Vrienden"</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>Naam</th><th>Voornaam</th><th>Postcode</th><th>Tel-nummer</th><th>Geboortedatum</th><th>Leeftijd</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Jens</td><td>Vanneste</td><td>2000</td><td>0456452345</td><td>05-23-02</td><td>21</td>
-        </tr>
-        <tr class="alt">
-            <td>Jannik</td><td>De Ruyter</td><td>8000</td><td>0456452345</td><td>05-22-02</td><td>21</td>
-        </tr>
-        <tr>
-            <td>Joda</td><td>Contijns</td><td>9000</td><td class="onbekend">onbekend</td><td>05-21-02</td><td>21</td>
-        </tr>
-        <tr class="alt">
-            <td>Jerst</td><td>Horst</td><td class="onbekend">onbekend</td><td>0456452345</td><td>05-13-02</td><td>21</td>
-        </tr>
-        <tr>
-            <td>Jort</td><td>Herst</td><td>5000</td><td>0456452345</td><td>05-05-02</td><td>21</td>
-        </tr>
-        </tbody>
-    </table>
+<section class="container" id="projects">
+    <h2>My Projects</h2>
+    <div class="project-item">
+        <img src="images/img.png" alt="Arduino Project" class="project-image">
+        <p>In het verleden heb ik een breathalyzer gemaakt dit is wel cool om te tonen op een homepage.</p>
+    </div>
 </section>
+
 </body>
 </html>
