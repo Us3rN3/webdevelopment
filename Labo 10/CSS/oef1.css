@@ -33,18 +33,27 @@ figcaption {
 	font-size: .8em;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	body {
+		background-color:mediumpurple;
+	}
 
-@media screen and (min-width: 767px) {
-	display: block;
-	background-color: white;
+	figure {
+		width: 48%;
+		display: inline-block;
+		box-sizing: border-box; /
+	}
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
-	display: inline-block;
-	background-color: cadetblue;
-}
+@media only screen and (min-width: 992px) {
+	body {
+		background-color:lightgreen;
+	}
+	figure {
+		width: 30%;
+		display: inline-block;
+		margin: 0 1.4% 2%;
+		box-sizing: border-box;/
+	}
 
-@media screen and (min-width: 992px) {
-	display: inline-block;
-	background-color: green;
 }
