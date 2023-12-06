@@ -1,17 +1,23 @@
 .container {
     background-color: cornflowerblue;
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: repeat(5, 1fr);
     display: grid;
+    gap: 10px;
+    height: 100vh;
 }
 
-.container.block {
+.container .block {
     margin: 20px;
     padding: 20px;
     background-color: white;
 }
 
-@media screen and (min-device-width: 700px) {
+
+@media screen and (min-width: 700px) {
+
+    .container{
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
 
     .block.block1 {
         grid-column: 1/2;
@@ -59,10 +65,47 @@
     }
 }
 
-@media screen and (max-device-width: 699px) {
+@media screen and (max-width: 699px) {
+
     .container{
-        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        background-color: green;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .block.block1 {
+        grid-column: 1/1;
+        grid-row: 1/1;
+    }
+    .block.block2 {
+        grid-column: 2/1;
+        grid-row: 1/1;
+    }
+    .block.block3 {
+        grid-column: 3/1;
+        grid-row: 1/1;
+    }
+    .block.block4 {
+        grid-column: 1/1;
+        grid-row: 2/1;
+    }
+    .block.block5 {
+        grid-column: 2/1;
+        grid-row: 2/1;
+    }
+    .block.block6 {
+        grid-column: 3/1;
+        grid-row: 2/1;
+    }
+    .block.block7 {
+        grid-column: 1/1;
+        grid-row: 3/1;
+    }
+    .block.block8 {
+        grid-column: 2/1;
+        grid-row: 3/1;
+    }
+    .block.block9 {
+        grid-column: 3/1;
+        grid-row: 3/1;
     }
 }
