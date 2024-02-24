@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm functie</title>
+</head>
+<body>
+
+<button id="wijzigButton">Wijzig</button>
+<p id="txtOutput">Welkom!</p>
+
+<script>
+    document.getElementById("wijzigButton").addEventListener("click", function() {
+        var result = confirm("Wil je de tekst wijzigen?");
+            var pElement = document.getElementById("txtOutput");
+            pElement.innerHTML = "De tekst is gewijzigd!";
+    });
+</script>
+
+</body>
+</html>
