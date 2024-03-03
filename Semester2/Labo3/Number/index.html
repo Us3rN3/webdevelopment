@@ -1,52 +1,48 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekenmachine</title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css.css">
-
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-
-<table id="invoice">
-    <thead>
-    <tr>
-        <th>Product</th>
-        <th>Prijs</th>
-        <th>Aantal</th>
-        <th>BTW</th>
-        <th>Subtotaal</th>
-    </tr>
-    </thead>
+<table>
     <tbody>
     <tr>
-        <td>Product 1</td>
+        <td>producten</td>
+        <td>prijs</td>
+        <td>aantal</td>
+        <td>btw</td>
+        <td>subtotaal</td>
+    </tr>
+    <tr>
+        <td>product1</td>
         <td class="prijs">10.00 Eur</td>
-        <td><input type="number" value="0" class="aantal"></td>
+        <td><input class="aantal" type="number" value="0"></td>
         <td class="btw">6%</td>
         <td class="subtotaal">0.00 Eur</td>
     </tr>
     <tr>
-        <td>Product 2</td>
-        <td class="prijs">20.00 Eur</td>
-        <td><input type="number" value="0" class="aantal"></td>
-        <td class="btw">10%</td>
+        <td>product2</td>
+        <td class="prijs">15.00 Eur</td>
+        <td><input class="aantal" type="number" value="0"></td>
+        <td class="btw">21%</td>
         <td class="subtotaal">0.00 Eur</td>
     </tr>
     <tr>
-        <td>Totaal</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td id="totaal"></td>
+        <td>product3</td>
+        <td class="prijs">12.20 Eur</td>
+        <td><input class="aantal" type="number" value="0"></td>
+        <td class="btw">21%</td>
+        <td class="subtotaal">0.00 Eur</td>
+    </tr>
+    <tr>
+        <td colspan="4">totaal</td>
+        <td id="totaal">0.00 Eur</td>
     </tr>
     </tbody>
 </table>
-
-<button onclick="herbereken()">Herbereken</button>
-
-<script type="text/javascript" charset="UTF-8" src="scripts/index.js"></script>
-
+<button id="berekenen">Herberekenen</button>
+<script src="scripts/index.js"></script>
 </body>
 </html>

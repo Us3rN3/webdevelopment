@@ -1,31 +1,33 @@
-const updateColor = () => {
-    const redSlider = document.getElementById('rood');
-    const greenSlider = document.getElementById('groen');
-    const blueSlider = document.getElementById('blauw');
-    const colorBox = document.getElementById('box');
-    const rgbValues = document.getElementById('values');
+let setup;
+setup = () => {
+    const sliders = document.getElementsByClassName("slider");
+    for(let i = 0; i < sliders.length;i++){
+        sliders[i].addEventListener("change", changeColor);
+        sliders[i].addEventListener("input", changeColor);
+    }
+    changeColor();
+};
 
-    const redValue = redSlider.value;
-    const greenValue = greenSlider.value;
-    const blueValue = blueSlider.value;
+let changeColor;
+changeColor = () => {
+    const colorSquare = document.getElementById("CP-square")
+    const redSlider = document.getElementById("red");
+    const greenSlider = document.getElementById("green");
+    const blueSlider = document.getElementById("blue");
 
-    const colorString = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
-    colorBox.style.backgroundColor = colorString;
-    rgbValues.textContent = `RGB: ${redValue}, ${greenValue}, ${blueValue}`;
+    let red = redSlider.value;
+    let green = greenSlider.value;
+    let blue = blueSlider.value;
+    let bgColor = `rgb(${red} , ${green}, ${blue})`;
+
+    let valueRed = document.getElementById("valueRed");
+    let valueGreen = document.getElementById("valueGreen");
+    let valueBlue = document.getElementById("valueBlue");
+
+    valueRed.textContent = " Red: " + red;
+    valueGreen.textContent = " Green: " + green;
+    valueBlue.textContent = " Blue: " + blue;
+
+    colorSquare.style.backgroundColor = bgColor;
 }
-
-const setup = () => {
-    const redSlider = document.getElementById('rood');
-    const greenSlider = document.getElementById('groen');
-    const blueSlider = document.getElementById('blauw');
-
-    // Voeg event listeners toe aan de sliders
-    redSlider.addEventListener('input', updateColor);
-    greenSlider.addEventListener('input', updateColor);
-    blueSlider.addEventListener('input', updateColor);
-
-    // Initialiseer de kleur
-    updateColor();
-}
-
 window.addEventListener("load", setup);

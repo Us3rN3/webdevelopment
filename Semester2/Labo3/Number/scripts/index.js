@@ -1,30 +1,29 @@
 const setup = () => {
-    window.addEventListener("load", () => {
-        document.getElementById("herberekenBtn").addEventListener("click", herbereken);
-    });
-};
+    let btnBerekenen=document.getElementById("berekenen");
+    btnBerekenen.addEventListener("click", berekenen);
+}
+const berekenen = () => {
+    let prijs = document.getElementsByClassName('prijs');
+    let aantal = document.getElementsByClassName('aantal');
+    let btw = document.getElementsByClassName('btw');
+    let subtotaal = document.getElementsByClassName('subtotaal');
+    let totaal=document.getElementById("totaal");
+    let totaalberekening = 0;
+    let prijzen = [];
+    let btws = [];
+    for(let i = 0; i < prijs.length; i++){
+        prijzen[i] = parseInt(prijs[i].textContent, 10);
+        btws[i] = parseInt(btw[i].textContent, 10);
 
-const herbereken = () => {
-    var rows = document.querySelectorAll("#invoice tbody tr");
-    var totaal = 0;
+        let tussenresultaat1 = (prijzen[i]*aantal[i].value)/100;
+        let tussenresultaat2 = tussenresultaat1 * btws[i];
+        let resultaat1 = (prijzen[i]*aantal[i].value) + tussenresultaat2;
+        subtotaal[i].innerText = resultaat1 + " Eur";
+        totaalberekening += resultaat1;
 
-    rows.forEach(function(row, index) {
-        // Overslaan van de laatste rij (index 0-based)
-        if (index < rows.length - 1) {
-            var prijs = parseFloat(row.querySelector(".prijs").textContent);
-            var aantal = parseInt(row.querySelector(".aantal").value);
-            var btw = parseFloat(row.querySelector(".btw").textContent) / 100;
+    }
 
-            var subtotaal = (prijs * aantal)+(prijs * aantal)*btw;
-            var totaalBedrag = subtotaal;
-
-            row.querySelector(".subtotaal").textContent = subtotaal.toFixed(2) + " Eur";
-
-            totaal += totaalBedrag;
-        }
-    });
-
-    document.getElementById("totaal").textContent = totaal.toFixed(2) + " Eur";
-};
-
+    let totaalberekening2 = totaalberekening.toFixed(2);
+    totaal.innerText = totaalberekening2 + " Eur";
+}
 window.addEventListener("load", setup);

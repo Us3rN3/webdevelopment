@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RGB Color Picker</title>
+    <title>Oefening</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
+
 <body>
-<div class="container">
-    <div class="sliders">
-        <input type="range" min="0" max="255" value="0" id="rood">
-        <input type="range" min="0" max="255" value="0" id="groen">
-        <input type="range" min="0" max="255" value="0" id="blauw">
-    </div>
-    <div id="values"></div>
-    <div id="box"></div>
+<div class="CP-Container">
+    <span>0</span><input type="range" class="slider" id="red" min="0" max="255" value="0"><span>255</span><span id="valueRed"></span><br>
+    <span>0</span><input type="range" class="slider" id="green" min="0" max="255" value="0"><span>255</span><span id="valueGreen"></span><br>
+    <span>0</span><input type="range" class="slider" id="blue" min="0" max="255" value="0"><span>255</span><span id="valueBlue"></span><br>
+    <div id="CP-square"></div>
 </div>
-</body>
 <script src="scripts/index.js"></script>
+</body>
 </html>
