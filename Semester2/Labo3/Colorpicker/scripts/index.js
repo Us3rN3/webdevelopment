@@ -10,7 +10,7 @@ setup = () => {
 
 let changeColor;
 changeColor = () => {
-    const colorSquare = document.getElementById("box")
+    const colorSquare = document.getElementById("box");
     const redSlider = document.getElementById("red");
     const greenSlider = document.getElementById("green");
     const blueSlider = document.getElementById("blue");
@@ -24,7 +24,7 @@ changeColor = () => {
     let valueGreen = document.getElementById("valueGreen");
     let valueBlue = document.getElementById("valueBlue");
 
-    valueRed.textContent = " Red: " + red;
+    valueRed.textContent = red;
     valueGreen.textContent = " Green: " + green;
     valueBlue.textContent = " Blue: " + blue;
     colorSquare.style.backgroundColor = bgColor;

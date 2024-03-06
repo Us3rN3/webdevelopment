@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<form action="index.html" method="post">
+    <label for="firstname"> Fist name*: </label>
+    <input id="firstname" type="text" name="firstname" required="required" placeholder="Your first name">
+    <br>
+    <label for="lastname"> Last name*: </label>
+    <input id="lastname" type="text" name="lastname" required="required" placeholder="Your last name"><br>
+    Which sport do you train? <br>
+    Running <input name="running" type="checkbox" value="running"><br>
+    Swimming <input type="checkbox" name="swimming" value="swimming"><br>
+    Rowing <input type="checkbox" name="rowing" value="rowing"><br>
+    What is your gender? <br>
+    <input type="radio" name="gender"> Male <br>
+    <input type="radio" name="gender"> Female <br>
+    <label for="movie"> Favorite movie: </label>
+    <input type="text" id="movie" name="movie"> <br>
+    <label for="quote"> Favorite quote: </label>
+    <input type="text" id="quote" name="quote" placeholder="Write your favorite quote" ><br>
+    <label for="pass"> Password*: </label>
+    <input type="text" required="required" name="pass" id="pass"> <br>
+    Welke programmeertalen kent u ?
+    <select name="food" size="1">
+        <option value="burger">Hamburger</option>
+    </select><br>
+    <input type="file" name="file" value="Bestand kiezen"><br>
+    <label for="email"> Email adress: </label>
+    <input type="text" name="email" placeholder="Enter your email adress" id="email"><br>
+    <label for="site"> Favorite site: </label>
+    <input id="site" type="text" name="url" placeholder="Enter the URL of your favorite site"><br>
+    Favorite number between 1-10: <input type="number" name="txtNumber" max="10"><br>
+    Favorite number tween 11-1000: <input type="range" name="txtRange" min="11" max="1000"><br>
+    When were you born? <input type="date" name="datum"><br>
+    Belgium zip-code reg number*: <input type="text" pattern="[0-9]{4}" placeholder="9999" required="required">
+</form>
+<script src="scripts/index.js"></script>
+</body>
+</html>
