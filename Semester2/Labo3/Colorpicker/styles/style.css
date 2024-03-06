@@ -1,15 +1,16 @@
 body {
-    background-color: antiquewhite;
+    background-color: blue;
 
 }
 .container {
     background-color: white;
     border-radius: 15px;
     border: 5px solid lightgray;
-    width:40%;
+    width:60%;
     margin: 0 auto;
     text-align: center;
     display: flex;
+    flex-direction: column;
 }
 
 #box {
