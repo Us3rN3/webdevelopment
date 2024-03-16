@@ -1,19 +1,24 @@
-const setup = () =>{
- //let tekst = "Gisteren zat de jongen op de stoep en at de helft van de appel";
-    let tekst = "De man riep de"
- const zoekString = [" de ", "De ", "de ", " de"];
- const vervangend = " het "
+const setup = () => {
+    let tekst = "De man riep de";
 
- for(let zoekWoord of zoekString) {
-     let index = tekst.indexOf(zoekWoord);
+    const zoekString = [" de ", "De ", "de ", " de"];
+    let vervangend = " het ";
 
-     while (index !== -1) {
-         tekst = tekst.substring(0, index) + vervangend + tekst.substring(index + zoekWoord.length);
+    for(let zoekWoord of zoekString) {
+        let index = tekst.indexOf(zoekWoord);
 
-         index = tekst.indexOf(zoekWoord, index + vervangend.length);
-     }
- }
- console.log(tekst);
+        while (index !== -1) {
+            if (zoekWoord[0] === zoekWoord[0].toUpperCase()) {
+                vervangend = " Het ";
+            } else {
+                vervangend = " het ";
+            }
+
+            tekst = tekst.substring(0, index) + vervangend + tekst.substring(index + zoekWoord.length);
+            index = tekst.indexOf(zoekWoord, index + vervangend.length);
+        }
+    }
+    console.log(tekst);
 }
 
-window.addEventListener("load", setup)
+window.addEventListener("load", setup);
