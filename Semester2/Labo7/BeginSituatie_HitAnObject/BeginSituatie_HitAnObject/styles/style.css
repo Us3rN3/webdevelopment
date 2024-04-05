@@ -1,0 +1,15 @@
+#playField {
+    width: 600px;
+    height: 800px;
+    border: 3px solid black;
+}
+#object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+button {
+    display: block;
+    margin: 2px auto;
+}
