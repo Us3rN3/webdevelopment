@@ -1,31 +1,29 @@
 .memory-board {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid; /* Gebruik grid layout */
+    grid-template-columns: repeat(4, 1fr); /* 4 kolommen */
+    grid-gap: 10px; /* Ruimte tussen kaarten */
     width: 1000px;
     margin: 0 auto;
 }
 
 .card {
-    width: 225px;
-    height: 319px;
-    margin: 10px;
+    width: calc((1000px - 3 * 10px) / 4); /* Bereken de breedte van elke kaart */
+    height: calc((1000px - 2 * 10px) / 3); /* Bereken de hoogte van elke kaart */
     background: url('../images/achterkant.jpg') no-repeat;
     background-size: cover;
     cursor: pointer;
+    position: relative;
 }
 
 .card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: none;
 }
 
 .card.gekozenkaart img {
     display: block;
-}
-
-.card.correct {
-    border: 3px solid green;
-}
-
-.card.incorrect {
-    border: 3px solid red;
 }

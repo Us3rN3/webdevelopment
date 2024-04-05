@@ -45,13 +45,17 @@ const createBoard = () => {
         cardElement.addEventListener('click', handleClick);
     }
 }
-
-// Functie om een kaart aan te klikken
 const aangeklikt = (imgElement, cardElement) => {
+    // Controleer of er al twee kaarten zijn omgedraaid
+    if (count === 2 || isBusy) {
+        return;
+    }
+
     moves++;
     imgElement.style.display = 'block';
+    imgElement.style.zIndex = '1'; // Zorg ervoor dat de afbeelding bovenop de kaart ligt
     cardElement.style.background = 'none';
-    imgElement.classList.add('gekozenkaart');
+    cardElement.classList.add('gekozenkaart');
 
     count++;
 
@@ -59,11 +63,10 @@ const aangeklikt = (imgElement, cardElement) => {
         controleren();
     }
 
-    if (gevonden === 6){
+    if (gevonden === 6) {
         stoppen();
     }
 }
-
 // Event handler voor het klikken op een kaart
 const handleClick = (event) => {
     const cardElement = event.currentTarget; // Haal het huidige doelelement op (de kaart)
@@ -73,13 +76,13 @@ const handleClick = (event) => {
 
 // Functie om te controleren of de gekozen kaarten matchen
 const controleren = () => {
-    count = 0;
+    isBusy = true; // Zet isBusy op true voordat de controle begint
     const gekozenKaarten = document.querySelectorAll('.gekozenkaart');
 
-    const eersteKaartKlassen = Array.from(gekozenKaarten[0].classList);
-    const tweedeKaartKlassen = Array.from(gekozenKaarten[1].classList);
+    const eersteKaartKlasse = gekozenKaarten[0].firstElementChild.classList[0]; // Klasse van de eerste gekozen kaart
+    const tweedeKaartKlasse = gekozenKaarten[1].firstElementChild.classList[0]; // Klasse van de tweede gekozen kaart
 
-    const klassenOvereenkomen = eersteKaartKlassen.every(klasse => tweedeKaartKlassen.includes(klasse));
+    const klassenOvereenkomen = eersteKaartKlasse === tweedeKaartKlasse;
 
     if (klassenOvereenkomen) {
         console.log('Match gevonden!');
@@ -89,21 +92,23 @@ const controleren = () => {
             imgElement.classList.add('correct');
         });
     } else {
-        gekozenKaarten.forEach(imgElement=>{
+        console.log('Geen match gevonden!');
+        gekozenKaarten.forEach(imgElement => {
             imgElement.classList.add('incorrect');
-        })
+        });
+
         setTimeout(() => {
             gekozenKaarten.forEach(imgElement => {
                 imgElement.style.display = 'none';
-                imgElement.parentElement.style.background = "";
-                imgElement.classList.remove('gekozenkaart');
-                imgElement.classList.remove("incorrect")
+                imgElement.parentElement.style.background = '';
+                imgElement.parentElement.addEventListener('click', handleClick); // Voeg klikgebeurtenissen opnieuw toe
+                imgElement.classList.remove('gekozenkaart', 'incorrect');
             });
+            isBusy = false; // Zet isBusy op false nadat de controle is voltooid
         }, 1000);
     }
-    gekozenKaarten.forEach(imgElement => {
-        imgElement.classList.remove('gekozenkaart');
-    });
+
+    count = 0; // Reset de count-variabele
 }
 
 // Functie om het spel te beëindigen
