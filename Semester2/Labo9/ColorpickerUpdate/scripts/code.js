@@ -17,7 +17,39 @@ const initialize = () => {
 		update(); // If no saved settings, apply default
 	}
 
-	document.getElementById("button").addEventListener("click", saveSettings)
+	let savedColors = localStorage.getItem("savedColors");
+	if (savedColors) {
+		let colors = JSON.parse(savedColors);
+		for (let i = 0; i < colors.length; i++) {
+			let color = colors[i];
+			let savedColor = document.createElement("div");
+			savedColor.classList.add("savedColor");
+			savedColor.style.backgroundColor = "rgb(" + color.red + "," + color.green + "," + color.blue + ")";
+
+			let closeButton = document.createElement("span");
+			closeButton.textContent = "\u00D7";
+
+			closeButton.classList.add("closeButton");
+
+			closeButton.addEventListener("click", function() {
+				savedColor.remove();
+				removeColorFromStorage(color);
+			});
+
+			savedColor.appendChild(closeButton);
+
+			document.getElementById("savedColors").appendChild(savedColor);
+
+			savedColor.addEventListener("click", () => {
+				document.getElementById("sldRed").value = color.red;
+				document.getElementById("sldGreen").value = color.green;
+				document.getElementById("sldBlue").value = color.blue;
+				update();
+			})
+		}
+	}
+
+	document.getElementById("button").addEventListener("click", saveColor);
 };
 
 const update = () => {
@@ -50,6 +82,7 @@ const saveColor = () => {
 
 	closeButton.addEventListener("click", function() {
 		savedColor.remove();
+		removeColorFromStorage({ red, green, blue });
 	});
 
 	savedColor.appendChild(closeButton);
@@ -63,21 +96,26 @@ const saveColor = () => {
 		update();
 	})
 
+	let savedColors = localStorage.getItem("savedColors");
+	if (savedColors) {
+		let colors = JSON.parse(savedColors);
+		colors.push({ red, green, blue });
+		localStorage.setItem("savedColors", JSON.stringify(colors));
+	} else {
+		localStorage.setItem("savedColors", JSON.stringify([{ red, green, blue }]));
+	}
 };
 
-const saveSettings = () => {
-	let settings = {};
-	let settingsJSON;
-
-	settings.red = parseInt(document.getElementById("sldRed").value);
-	settings.green = parseInt(document.getElementById("sldGreen").value);
-	settings.blue = parseInt(document.getElementById("sldRed").value);
-
-	settingsJSON = JSON.stringify(settings);
-	localStorage.setItem("settingColorpicker", settingsJSON);
-}
-
+const removeColorFromStorage = (color) => {
+	let savedColors = localStorage.getItem("savedColors");
+	if (savedColors) {
+		let colors = JSON.parse(savedColors);
+		let index = colors.findIndex((c) => c.red === color.red && c.green === color.green && c.blue === color.blue);
+		if (index!== -1) {
+			colors.splice(index, 1);
+			localStorage.setItem("savedColors", JSON.stringify(colors));
+		}
+	}
+};
 
 window.addEventListener("load", initialize);
-
-document.getElementById("button").addEventListener("click", saveColor);
