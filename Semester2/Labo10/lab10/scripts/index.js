@@ -15,8 +15,8 @@ let validateCommand = () => {
     } else {
         if (input.charAt(1) === "g" && input.charAt(2) === " ") {
             console.log('Google found!');
-            let inputCopy = input;
-            let text = inputCopy.substring(3);
+            let copy = input;
+            let text = copy.substring(3);
             text = text.split(" ").join("+");
             let link = `https://www.google.com/search?q=${text}`
             addCard(link, text);
@@ -25,8 +25,8 @@ let validateCommand = () => {
 
         } else if (input.charAt(1) === "y" && input.charAt(2) === " ") {
             console.log('YouTube found!');
-            let inputCopy = input;
-            let text = inputCopy.substring(3);
+            let copy = input;
+            let text = copy.substring(3);
             text = text.split(" ").join("+");
             let link = `https://www.youtube.com/results?search_query=${text}`;
             addCard(link, text);
@@ -35,8 +35,8 @@ let validateCommand = () => {
 
         } else if (input.charAt(1) === "i" && input.charAt(2) === " ") {
             console.log('Instagram found!');
-            let inputCopy = input;
-            let text = inputCopy.substring(3);
+            let copy = input;
+            let text = copy.substring(3);
             text = text.split(" ").join("+");
             let link = `https://www.instagram.com/explore/tags/${text}`;
             addCard(link, text);
@@ -45,8 +45,8 @@ let validateCommand = () => {
 
         } else if (input.charAt(1) === "t" && input.charAt(2) === " ") {
             console.log('Twitter found!');
-            let inputCopy = input;
-            let text = inputCopy.substring(3);
+            let copy = input;
+            let text = copy.substring(3);
             text = text.split(" ").join("+");
             let link = `https://twitter.com/hashtag/${text}`;
             addCard(link, text);
